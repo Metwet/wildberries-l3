@@ -89,11 +89,18 @@ img {
   background: none;
   padding: 0;
   margin: 0;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
 
   svg {
     width: 32px;
     height: 32px;
     margin-top: 4px;
+  }
+
+  &__active {
+    background: var(--text-light-color);
   }
 }
 
