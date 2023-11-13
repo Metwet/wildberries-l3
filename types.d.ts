@@ -57,3 +57,9 @@ export type ProductData = {
     src: string;
     description: string;
 }
+
+export type EventAnalytics = {
+    type: string, 
+	payload: any, 
+	timestamp: Date
+}
