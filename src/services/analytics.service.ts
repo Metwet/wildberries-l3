@@ -1,3 +1,4 @@
+import { genUUID } from "../utils/helpers";
 import { EventAnalytics, ProductData } from "types";
 
 class AnalyticsService {
@@ -30,7 +31,8 @@ class AnalyticsService {
         this._send(event);
     }
 
-    sendPurchase(orderId: string, totalPrice: number, productIds: string[]) {
+    sendPurchase(totalPrice: number, productIds: number[]) {
+        const orderId = genUUID();
         const event: EventAnalytics = {
             type:'purchase',
             payload: {orderId, totalPrice, productIds},
