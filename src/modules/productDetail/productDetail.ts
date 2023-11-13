@@ -4,6 +4,7 @@ import { formatPrice } from '../../utils/helpers';
 import { ProductData } from 'types';
 import html from './productDetail.tpl.html';
 import { cartService } from '../../services/cart.service';
+import { analyticsService } from '../../services/analytics.service';
 
 class ProductDetail extends Component {
   more: ProductList;
@@ -41,6 +42,8 @@ class ProductDetail extends Component {
       .then((res) => res.json())
       .then((secretKey) => {
         this.view.secretKey.setAttribute('content', secretKey);
+
+        if(this.product) analyticsService.sendViewCard(this.product, secretKey);
       });
 
     fetch('/api/getPopularProducts')
