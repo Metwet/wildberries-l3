@@ -16,10 +16,10 @@ class Homepage extends Component {
 
   render() {
     fetch('/api/getPopularProducts', {
-        headers: {
-          'x-userid': window.userId,
-        }
-  })
+      headers: {
+        'x-userid': window.userId || "userId не задан"
+      }
+    })
       .then((res) => res.json())
       .then((products) => {
         this.popularProducts.update(products);
