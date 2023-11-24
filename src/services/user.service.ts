@@ -5,7 +5,7 @@ const ID_DB = '__wb-userId';
 
 declare global {
   interface Window {
-    userId?: string;
+    userId: string;
   }
 }
 

@@ -17,7 +17,7 @@ class Homepage extends Component {
   render() {
     fetch('/api/getPopularProducts', {
       headers: {
-        'x-userid': window.userId || "userId не задан"
+        'x-userid': window.userId
       }
     })
       .then((res) => res.json())

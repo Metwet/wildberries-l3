@@ -22,7 +22,7 @@ class ProductDetail extends Component {
 
     const productResp = await fetch(`/api/getProduct?id=${productId}`, {
       headers: {
-        'x-userid': window.userId || "userId не задан"
+        'x-userid': window.userId
       }
     });
     this.product = await productResp.json();
@@ -49,7 +49,7 @@ class ProductDetail extends Component {
 
     fetch('/api/getPopularProducts', {
         headers: {
-          'x-userid': window.userId || "userId не задан"
+          'x-userid': window.userId
         }
       })
       .then((res) => res.json())
